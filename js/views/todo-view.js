@@ -18,6 +18,7 @@ var app = app || {};
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
+			'click .priority-btn': 'togglePriority',
 			'dblclick label': 'edit',
 			'click .edit-btn': 'edit',
 			'click .destroy': 'clear',
@@ -58,6 +59,10 @@ var app = app || {};
 
 		toggleVisible: function () {
 			this.$el.toggleClass('hidden', this.isHidden());
+		},
+
+		togglePriority: function () {
+			this.$el.toggleClass('priority');
 		},
 
 		isHidden: function () {
